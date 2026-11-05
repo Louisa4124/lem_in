@@ -1,6 +1,6 @@
 NAME        = lem_in
 CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror 
+CFLAGS      = #-Wall -Wextra -Werror 
 IFLAGS		= -Iinclude
 
 SRC_DIR     = src
@@ -16,7 +16,7 @@ LIBS        = -lglfw -lGL -lGLEW
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $(NAME) $(LIBS)
+	$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) libft.a -o $(NAME) $(LIBS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)

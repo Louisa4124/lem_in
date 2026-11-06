@@ -14,8 +14,6 @@ typedef struct s_link
 typedef struct s_room
 {
     char            *name;
-    int             x;
-    int             y;
     int             is_start; // 1 si c'est la room start
     int             is_end;   // 1 si c'est la room end
     int             visited;

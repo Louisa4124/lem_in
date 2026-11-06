@@ -1,0 +1,203 @@
+---
+BasedOnStyle: LLVM
+---
+Language: Cpp
+
+# meta
+OneLineFormatOffRegex: NOLINT
+#Standard:
+
+# include
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:           '.*'
+    Priority:        1
+  - Regex:           '^<.*>$'
+    Priority:        2
+  - Regex:           '".*"'
+    Priority:        3
+SortIncludes:
+  Enabled: true
+  IgnoreExtension: false
+  # Natural: true
+  # FilesBeforeFolders: true
+
+SortUsingDeclarations: LexicographicNumeric
+
+# indent
+IndentWidth: 4
+ColumnLimit: 100
+ContinuationIndentWidth: 4
+UseTab: Never # ForIdentation
+IndentAccessModifiers: false
+IndentCaseBlocks: true
+IndentCaseLabels: true
+IndentExportBlock: true
+IndentExternBlock: Indent
+IndentGotoLabels: NoIndent
+IndentPPDirectives: AfterHash
+PPIndentWidth: 1
+IndentRequiresClause: false
+IndentWrappedFunctionNames: false
+LambdaBodyIndentation: Signature
+NamespaceIndentation: Inner
+NumericLiteralCase:
+  ExponentLetter: Lower
+  HexDigit: Lower
+  Prefix: Lower
+  Suffix: Lower
+
+# alignement
+AlignAfterOpenBracket: true
+AlignArrayOfStructures: Right
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignConsecutiveMacros: Consecutive
+AlignConsecutiveShortCaseStatements:
+    Enabled: true
+AlignEscapedNewlines: Left #WithLastLine
+AlignOperands: Align
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 1
+BitFieldColonSpacing: Both
+PointerAlignment: Left
+QualifierAlignment: Left
+ReferenceAlignment: Left
+ReflowComments: Always
+
+# argument packing
+AllowAllArgumentsOnNextLine: false # true
+AllowAllParametersOfDeclarationOnNextLine: false # same
+BinPackLongBracedList: true
+PackArguments:
+  BinPack: OnePerLine
+PackConstructorInitializers: CurrentLine
+PackParameters:
+  BinPack: OnePerLine
+
+# allow single line
+AllowShortBlocksOnASingleLine: true
+AllowShortCaseExpressionOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+AllowShortNamespacesOnASingleLine: false
+AllowShortRecordOnASingleLine: Empty
+
+# break
+AllowBreakBeforeNoexceptSpecifier: Never
+AlwaysBreakBeforeMultilineStrings: false
+BreakAdjacentStringLiterals: false
+BreakAfterAttributes: Never
+BreakAfterOpenBracketBracedList: true
+BreakAfterOpenBracketFunction: true
+BreakAfterOpenBracketIf: false
+BreakAfterOpenBracketLoop: false
+BreakAfterOpenBracketSwitch: false
+BreakAfterReturnType: ExceptShortType
+BreakBeforeBinaryOperators: All
+BreakBeforeBraces: Allman
+BreakBeforeCloseBracketBracedList: true
+BreakBeforeCloseBracketFunction: true
+BreakBeforeCloseBracketIf: false
+BreakBeforeCloseBracketLoop: false
+BreakBeforeCloseBracketSwitch: false
+BreakBeforeConceptDeclarations: Allowed
+BreakBeforeInlineASMColon: OnlyMultiline
+BreakBeforeReturnType: None
+BreakBeforeTemplateCloser: true
+BreakBeforeTernaryOperators: true
+BreakBinaryOperations:
+  Default: OnePerLine
+BreakConstructorInitializers: AfterColon
+BreakFunctionDeclarationParameters: false
+BreakFunctionDefinitionParameters: false
+BreakInheritanceList: AfterColon
+BreakStringLiterals: true
+BreakTemplateDeclarations: MultiLine
+
+# CompactCaseLabels: false
+CompactNamespaces: true
+Cpp11BracedListStyle: Block
+
+EmptyLineAfterAccessModifier: Never
+EmptyLineBeforeAccessModifier: LogicalBlock
+
+  # /!\ may cause incorrect formatting
+EnumTrailingComma: Leave
+
+# namespace
+FixNamespaceComments: true
+ShortNamespaceLines: 25
+
+# insertion
+InsertBraces: false
+InsertNewlineAtEOF: true
+IntegerLiteralSeparator:
+  Binary: 4
+  BinaryMinDigitsInsert: 11
+  Decimal: 3
+  DecimalMinDigitsInsert: 9
+  Hex: -1
+
+# remove
+RemoveBracesLLVM: false
+  # /!\ may cause incorrect formatting
+RemoveEmptyLinesInUnwrappedLines: true
+  # /!\ may cause incorrect formatting
+RemoveParentheses: MultipleParentheses
+RemoveSemicolon: false
+
+# empty lines
+KeepEmptyLines:
+  # AtEndOfBlock: false
+  AtEndOfFile: false
+  AtStartOfBlock: false
+  AtStartOfFile: false
+MaxEmptyLinesToKeep: 1
+LineEnding: LF
+SeparateDefinitionBlocks: Always
+
+# require
+RequiresClausePosition: WithPreceding
+RequiresExpressionIndentation: Keyword
+
+# space
+SpaceAfterCStyleCast: true
+SpaceAfterLogicalNot: false
+SpaceAfterOperatorKeyword: true
+SpaceAfterTemplateKeyword: false
+SpaceAroundPointerQualifiers: Default
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeEnumUnderlyingTypeColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeJsonColon: false
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBraces: Never
+SpacesBeforeTrailingComments: 3
+SpacesInAngles: Never
+# SpacesInBlockComments: true
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: -1
+SpacesInParens: Never
+SpacesInSquareBrackets: false
+
+#=# kept as reference
+# AttributeMacros: [__capability, __output, __unused]
+# CommentPragmas:
+# DisableFormat:
+# BraceWrapping: # should be used with BreakBeforeBraces: Custom
+# IncludeIsMainRegex
+# IncludeIsMainSourceRegex
+#

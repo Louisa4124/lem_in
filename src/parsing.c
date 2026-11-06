@@ -18,12 +18,13 @@ static int	is_valid_number(char *str)
 	return (1);
 }
 
-int	parse_ant_count(int fd)
+int	parse_ant_farm(int fd, t_lem *lem)
 {
 	char	*line;
 	int		ants;
 
 	ants = -1;
+    write(1, "debut de parsing\n", 18);
 	while (get_next_line(fd, &line) != 1)
 	{
         if (line[0] == '#')
@@ -34,11 +35,11 @@ int	parse_ant_count(int fd)
 		}
 		else if (line[0] != '\0')
 		{
-            write(1, "debut de parsing\n", 18);
-			if (is_valid_number(line))
+            if (is_valid_number(line))
 			{
 				ants = ft_atoi(line);
-                ft_printf("Nb de fourmis : %d\n", ants);
+                lem->nb_ants = ants;
+                ft_printf("Nb de fourmis : %d\n", lem->nb_ants);
 				free(line);
 				break ;
 			}
@@ -50,5 +51,5 @@ int	parse_ant_count(int fd)
 		}
 		free(line);
 	}
-	return (ants);
+	return (lem->nb_ants);
 }

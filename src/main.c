@@ -2,10 +2,16 @@
 #include <fcntl.h> 
 #include <unistd.h> 
 #include "parsing.h"
+#include "utils.h"
 
 int main(int argc, char **argv)
 {
-    int fd;
+    int         fd;
+    t_lem	    lem;
+
+    lem.nb_ants = 0;
+    lem.rooms = NULL;
+    lem.room_count = 0;
 
     if (argc > 2)
     {
@@ -22,7 +28,7 @@ int main(int argc, char **argv)
             return (1);
         }
         ft_printf("Ant farm : %s\n", argv[1]);
-        parse_ant_count(fd);
+        parse_ant_farm(fd, &lem);
         close(fd);
     }
 

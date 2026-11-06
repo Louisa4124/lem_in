@@ -17,7 +17,8 @@ typedef struct s_room
     int             is_start; // 1 si c'est la room start
     int             is_end;   // 1 si c'est la room end
     int             visited;
-    struct s_room   *next; 
+    t_link          *links; // toutes les rooms connectees a ma room
+    struct s_room   *next; // prochaine room 
 }                   t_room;
 
 // structure principale

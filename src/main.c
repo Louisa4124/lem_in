@@ -1,6 +1,7 @@
 #include "libft.h"
 #include <fcntl.h> 
 #include <unistd.h> 
+#include "parsing.h"
 
 int main(int argc, char **argv)
 {
@@ -21,6 +22,7 @@ int main(int argc, char **argv)
             return (1);
         }
         ft_printf("Ant farm : %s\n", argv[1]);
+        parse_ant_count(fd);
         close(fd);
     }
 

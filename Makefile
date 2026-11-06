@@ -1,6 +1,6 @@
 NAME        = lem_in
 CC          = gcc
-CFLAGS      = #-Wall -Wextra -Werror 
+CFLAGS      = #-g -fsanitize=address #-Wall -Wextra -Werror 
 IFLAGS		= -Iinclude
 
 SRC_DIR     = src

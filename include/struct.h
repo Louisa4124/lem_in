@@ -1,5 +1,5 @@
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef STRUCT
+# define STRUCT
 
 # include "libft.h"
 

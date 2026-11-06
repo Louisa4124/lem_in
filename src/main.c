@@ -2,7 +2,33 @@
 #include <fcntl.h> 
 #include <unistd.h> 
 #include "parsing.h"
-#include "utils.h"
+#include "struct.h"
+
+static void	print_all_links(t_lem *lem)
+{
+	t_room	*room;
+	t_link	*link;
+
+	room = lem->rooms;
+	ft_printf("\n\n========== LISTE DES TUNNELS ==========\n");
+	while (room)
+	{
+		ft_printf("\nSalle : %s\n", room->name);
+		link = room->links;
+		if (!link)
+			ft_printf("  Aucun lien\n");
+		while (link)
+		{
+			if (link->room)
+				ft_printf("  -> %s\n", link->room->name);
+			else
+				ft_printf("  -> NULL\n");
+			link = link->next;
+		}
+		room = room->next;
+	}
+	ft_printf("\n=======================================\n");
+}
 
 int main(int argc, char **argv)
 {
@@ -29,6 +55,7 @@ int main(int argc, char **argv)
         }
         ft_printf("Ant farm : %s\n", argv[1]);
         parse_ant_farm(fd, &lem);
+        print_all_links(&lem);
         close(fd);
     }
 

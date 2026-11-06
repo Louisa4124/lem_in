@@ -79,15 +79,21 @@ int	parse_ant_farm(int fd, t_lem *lem)
 	ants = -1;
 	is_start = 0;
 	is_end = 0;
-    write(1, "debut de parsing\n", 18);
+    ft_printf("debut de parsing\n");
 	while (get_next_line(fd, &line) == 0 && line != NULL)
 	{
 		if (line[0] == '#')
 		{
 			if (!ft_strncmp(line, "##start", 7))
+            {
+                ft_printf("start room detected\n");
 				is_start = 1;
+            }
 			else if (!ft_strncmp(line, "##end", 5))
+            {
+                ft_printf("end room detected\n");
 				is_end = 1;
+            }
 			free(line);
 			continue ;
 		}
@@ -115,11 +121,9 @@ int	parse_ant_farm(int fd, t_lem *lem)
 			{
 				room = create_room(line);
                 ft_printf("Created room : %s\n", room->name);
-                // ft_printf("Is start room : %d\n", room->is_start);
-                // ft_printf("Is end room : %d\n", room->is_end);
 				if (!room)
 				{
-					free(line);
+                    free(line);
 					return (-1);
 				}
 				room->is_start = is_start;
@@ -127,6 +131,10 @@ int	parse_ant_farm(int fd, t_lem *lem)
 				add_room(lem, room);
 				is_start = 0;
 				is_end = 0;
+                if (room->is_start == 1)
+                    ft_printf("Start room ! \n");
+                if (room->is_end == 1)
+                    ft_printf("End room ! \n");
 			}
 		}
 		free(line);

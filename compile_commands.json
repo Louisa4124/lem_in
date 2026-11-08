@@ -1,0 +1,30 @@
+[
+  {
+    "file": "src/main.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Iinclude",
+      "-Iinclude",
+      "-c",
+      "src/main.c",
+      "-o",
+      "obj/main.o"
+    ],
+    "directory": "/home/reina/Projects/lem_in",
+    "output": "obj/main.o"
+  },
+  {
+    "file": "src/parsing.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Iinclude",
+      "-Iinclude",
+      "-c",
+      "src/parsing.c",
+      "-o",
+      "obj/parsing.o"
+    ],
+    "directory": "/home/reina/Projects/lem_in",
+    "output": "obj/parsing.o"
+  }
+]

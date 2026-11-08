@@ -1,11 +1,10 @@
 ---
 BasedOnStyle: LLVM
 ---
-Language: Cpp
+Language: C
 
 # meta
 OneLineFormatOffRegex: NOLINT
-#Standard:
 
 # include
 IncludeBlocks: Regroup
@@ -19,8 +18,6 @@ IncludeCategories:
 SortIncludes:
   Enabled: true
   IgnoreExtension: false
-  # Natural: true
-  # FilesBeforeFolders: true
 
 SortUsingDeclarations: LexicographicNumeric
 
@@ -55,7 +52,7 @@ AlignConsecutiveDeclarations: Consecutive
 AlignConsecutiveMacros: Consecutive
 AlignConsecutiveShortCaseStatements:
     Enabled: true
-AlignEscapedNewlines: Left #WithLastLine
+AlignEscapedNewlines: LeftWithLastLine
 AlignOperands: Align
 AlignTrailingComments:
   Kind: Always
@@ -67,8 +64,8 @@ ReferenceAlignment: Left
 ReflowComments: Always
 
 # argument packing
-AllowAllArgumentsOnNextLine: false # true
-AllowAllParametersOfDeclarationOnNextLine: false # same
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
 BinPackLongBracedList: true
 PackArguments:
   BinPack: OnePerLine
@@ -155,7 +152,6 @@ RemoveSemicolon: false
 
 # empty lines
 KeepEmptyLines:
-  # AtEndOfBlock: false
   AtEndOfFile: false
   AtStartOfBlock: false
   AtStartOfFile: false
@@ -186,18 +182,8 @@ SpaceBeforeSquareBrackets: false
 SpaceInEmptyBraces: Never
 SpacesBeforeTrailingComments: 3
 SpacesInAngles: Never
-# SpacesInBlockComments: true
 SpacesInLineCommentPrefix:
   Minimum: 1
   Maximum: -1
 SpacesInParens: Never
 SpacesInSquareBrackets: false
-
-#=# kept as reference
-# AttributeMacros: [__capability, __output, __unused]
-# CommentPragmas:
-# DisableFormat:
-# BraceWrapping: # should be used with BreakBeforeBraces: Custom
-# IncludeIsMainRegex
-# IncludeIsMainSourceRegex
-#

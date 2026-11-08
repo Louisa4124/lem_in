@@ -1,3 +1,15 @@
-*.o 
+# build
+build/
+*.o
+*.o.json
+.cache/
+
+# local lib
+*.a
+
+# exe
+*.out
 lem_in
+
+# tests
 test

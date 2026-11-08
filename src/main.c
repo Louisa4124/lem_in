@@ -1,6 +1,6 @@
 #include "libft.h"
-#include <fcntl.h> 
-#include <unistd.h> 
+#include <fcntl.h>
+#include <unistd.h>
 #include "parsing.h"
 #include "utils.h"
 
